@@ -126,10 +126,7 @@ func (this *MainController) Register() {
 		o := orm.NewOrm()
 		o.Using("default")
 
-		user := new(models.AuthUser)
-		user.First = u.First
-		user.Last = u.Last
-		user.Email = u.Email
+		user := models.AuthUser{First: u.First, Last: u.Last, Email: u.Email}
 
 		// Convert password hash to string
 		user.Password = hex.EncodeToString(h.Hash) + hex.EncodeToString(h.Salt)
