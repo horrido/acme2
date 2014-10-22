@@ -199,7 +199,7 @@ func (this *MainController) Profile() {
 	//******** This page requires login
 	sess := this.GetSession("acme")
 	if sess == nil {
-		this.Redirect("/login/home", 302)
+		this.Redirect("/user/login/home", 302)
 		return
 	}
 	m := sess.(map[string]interface{})
@@ -301,7 +301,7 @@ func (this *MainController) Remove() {
 	//******** This page requires login
 	sess := this.GetSession("acme")
 	if sess == nil {
-		this.Redirect("/login/home", 302)
+		this.Redirect("/user/login/home", 302)
 		return
 	}
 	m := sess.(map[string]interface{})
